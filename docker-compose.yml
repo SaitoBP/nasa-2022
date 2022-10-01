@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  db:
+    container_name: db
+    image: postgres:14-alpine
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=nasa-2022-db
+    ports:
+      - 9001:5432
+    volumes:
+      - backend-volume:/var/lib/postgresql/data
+
+volumes:
+  backend-volume:
